@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>image upload</title>
+</head>
+<body>
+  <h2>image upload test (no camera)</h2>
+
+  <input type="file" id="fileInput" accept="image/*" />
+  <button onclick="upload()">upload test</button>
+
+  <script>
+    async function upload() {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+      if (!file) {
+        alert('plase pick an image');
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const res = await fetch('http://192.168.68.57:5000/api/detect', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await res.json();
+      console.log('backend return:', data);
+      alert(JSON.stringify(data));
+    }
+  </script>
+</body>
+</html>
