@@ -27,39 +27,17 @@ A Python Flask backend server for the AI Food Recognition mobile app. This serve
 - `GET /api/foods/history?user_id=<id>` - Get the user's food history
 
 ## Setup Instructions
-
-### 1. Environment Variables
-
-Copy `.env.example` to `.env` and fill in your API keys:
-
-```bash
-cp .env.example .env
-```
-
-Required API keys:
-- **Roboflow API Key**: Get from [Roboflow](https://roboflow.com/)
-- **USDA API Key**: Get from [USDA Food Data Central](https://fdc.nal.usda.gov/api-guide.html)
-
-
-### 2. Install Dependencies
+### 1. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run Development Server
+### 2. Run Development Server
 
 ```bash
 python app.py
 ```
 
 The server will start on `http://localhost:5000`
-
-
-## Implementation Status
-
-The backend is structured and ready for integration. Each service contains TODO comments with implementation guidance:
-
-- **Roboflow Service**: Ready for your pre-trained food detection model
-- **USDA Service**: Ready for nutrition data integration
 
